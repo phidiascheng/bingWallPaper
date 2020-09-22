@@ -8,7 +8,7 @@ soup = BeautifulSoup(requests.get(raw_img_url).text,"html.parser")
 img_url = 'https://cn.bing.com'+soup.find('url').text
 dirname=os.environ['HOME']+"/Pictures/Bing/"
 if not os.path.exists(dirname):
-    os.mkdirs(dirname)
+    os.mkdir(dirname)
 try:
     urllib.request.urlretrieve(img_url,dirname+'temp')
 except IOError as e:
